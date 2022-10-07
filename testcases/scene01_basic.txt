@@ -1,0 +1,119 @@
+PerspectiveCamera {
+    center 30 20 40
+    direction -.1 -0.1 -.2
+    up 0 1 0
+    angle 60
+    width 1024
+    height 1024
+}
+
+Lights {
+    numLights 1
+    PointLight {
+        position 12 20 45
+        color 0.9 0.9 0.9 
+        brightness 1
+    }
+}
+
+Background {
+    color 0.7 0.7 0.8
+}
+
+Materials {
+    numMaterials 9
+    Material { 
+        diffuseColor 1 0 0
+        color 1 0 0
+        diff 1.0
+    }
+    Material { 
+        diffuseColor 0 1 0
+        color 0 1 0
+        diff 1.0
+    }
+    Material { 
+        diffuseColor 0.7 0.7 0.7
+        color 0.8 0.8 0.8
+        diff 1.0
+    }
+    Material { 
+        diffuseColor 1 1 0
+        color 1 1 0
+        diff 1.0
+    }
+    Material {
+        diffuseColor 1 1 0
+        color 0 0.4 0.4
+        refr 0.5
+    }
+    Material {
+        emissionColor 3 3 3
+        color 3 3 3
+        diff 1.0
+    }
+    Material {
+        diffuseColor 0.7 0.7 0.7
+        color 0.7 0.7 0.7
+        diff 1.0
+    }
+    Material {
+        diffuseColor 1 1 1
+        color 1 1 1
+        SPEC
+    }
+    Material {
+        color 0.2 0.5 0.2
+        refl 0.8
+        diff 0.2
+        refr 0
+    }
+}
+
+Group {
+    numObjects 1
+    Group {
+        numObjects 8
+        MaterialIndex 6
+        Plane {
+            normal 0 0 1
+            offset 0
+        } 
+        MaterialIndex 1
+	    Plane {
+            normal 1 0 0
+            offset 0
+        }   
+        MaterialIndex 2
+	    Plane {
+        normal 0 1 0
+            offset 0
+            texture include/floor.jpg
+        }   
+        MaterialIndex 3
+        Plane {
+        normal 0 -1 0
+            offset -30
+        }  
+        MaterialIndex 0
+        Plane {
+        normal -1 0 0
+            offset -30
+        }  
+        MaterialIndex 6
+        Plane {
+        normal 0 0 -1
+            offset -45
+        } 
+        MaterialIndex 4
+        Sphere {
+            center 22 3 20
+            radius 3
+        }
+        MaterialIndex 8
+        Sphere {
+            center 10 4 16
+            radius 4
+        }
+    }
+}

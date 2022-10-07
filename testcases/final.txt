@@ -1,0 +1,199 @@
+PerspectiveCamera {
+    center 20 10 40
+    direction -.2 -0.02 -.9
+    up 0 1 0
+    angle 60
+    width 1536
+    height 1024
+}
+
+Lights {
+    numLights 1
+    PointLight {
+        position 10 32 38
+        color 0.9 0.9 0.9 
+        brightness 1
+    }
+}
+
+Background {
+    color 0.7 0.7 0.8
+}
+
+Materials {
+    numMaterials 15
+    Material { 
+        diffuseColor 0.7 0.7 0.7
+        color 1 1 1
+        diff 1.0
+        texture include/floor.jpg
+    }
+    Material {
+		color 0 1 1
+        diff 0.2
+        refr 0.9
+        refl 0
+	}
+	Material {
+		color 0 1 1
+        diff 0.2
+        refr 0.9
+        refl 0
+	}
+	Material {
+		color 0.7 0.4 0.6
+        diff 0.2
+        refr 0.9
+        refl 0
+	}
+	Material {
+		texture include/comicbg.jpg
+		diff 1.0
+		refr 0
+		refl 0
+	}
+	Material {
+		texture include/xiang.jpg
+		color 0 0.6 0.6
+		diff 1.0
+		refr 0
+		refl 0
+	}
+	Material {
+        color 1 1 1
+        refl 0.9
+        diff 0.2
+        refr 0
+    }
+    Material {
+        color 0 1 1
+        diff 0.2
+        refr 0.9
+        refl 0
+    }
+    Material {
+        color 0.6078 0.1882 1
+        diff 0.2
+        refr 0.9
+        refl 0
+    }
+    Material {
+        color 0 1 0
+        diff 0.2
+        refr 0.9
+        refl 0
+    }
+    Material {
+        color 1 0 0
+        diff 0.2
+        refr 0.9
+        refl 0
+    }
+	Material {
+        color 0 1 1
+        diff 1.0
+        refr 0
+        refl 0
+    }
+	Material {
+		texture include/mabu.jpg
+		color 0 1 1
+		diff 1.0
+		refl 0
+		refr 0
+	}
+	Material {
+		color 1 1 1
+		diff 0.2
+		refr 0.9
+		refl 0.1
+	}
+	Material {
+		color 0 1 1
+		diff 0.2
+		refr 0.9
+		refl 0
+	}
+}
+
+Group {
+    numObjects 5
+    MaterialIndex 0
+    Plane {
+    	normal 0 1 0
+        offset 0
+        scale 10
+    }  
+	MaterialIndex 4
+	Plane {
+	normal 0 0 1
+		offset 0
+		scale 42
+	}  
+	MaterialIndex 5
+	Plane {
+	normal 1 0 0
+		offset -8
+		scale 20
+	}  
+	Group {
+		numObjects 3
+		MaterialIndex 3
+        Transform {
+            Scale  30 30 30
+            Translate 0.6 -0.03 0.7
+            TriangleMesh {
+                obj_file mesh/bunny.fine.obj
+            }
+        }
+        MaterialIndex 12
+	RevSurface {
+        profile BezierCurve {
+            controls
+                [ -2 2 0 ]
+                [ -4 0 0 ]
+                [ 0 0 0 ]
+                [ -2 -2 0 ]
+        }
+        position 3 2 22
+    }
+		MaterialIndex 14
+        Transform {
+            Scale  2 2 2 
+            Translate 11 2 13
+            TriangleMesh {
+                obj_file mesh/dragon.obj
+            }
+        }
+	}
+		Group {
+        numObjects 5
+        MaterialIndex 6
+        Sphere {
+            center 0 8 10
+            radius 8
+        }
+        MaterialIndex 9
+        Sphere {
+            center 17 2 8
+            radius 2
+        }
+        MaterialIndex 8
+        Sphere {
+            center 21 2 8
+            radius 2
+        }
+        MaterialIndex 7
+        Sphere {
+            center 25 2 8
+            radius 2
+        }
+        MaterialIndex 10
+        Sphere {
+            center 13 2 8
+            radius 2
+        }
+    }
+	
+
+}
